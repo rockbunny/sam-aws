@@ -15,6 +15,6 @@ def get(event, context):
     else:
         response = {
             "statusCode": 404,
-            "body": ""
+            "body": "An error has occurred, please check the id"
         }
     return response

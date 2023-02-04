@@ -1,6 +1,7 @@
 import boto3
 import todoList
 
+
 def translate(event, context):
     client = boto3.client('comprehend')
     item = todoList.get_item(
@@ -11,9 +12,7 @@ def translate(event, context):
         comprehendResponse = client.detect_dominant_language(
             Text=itemText
         )
-        itemTextLanguageCode = comprehendResponse[
-            'Languages'][0]['LanguageCode'
-            ]
+        itemTextLanguageCode = comprehendResponse['Languages'][0]['LanguageCode']
 
         response = {
             "statusCode": 200,

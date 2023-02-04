@@ -1,6 +1,4 @@
-import json
 import boto3
-import decimalencoder
 import todoList
 
 def translate(event, context):
@@ -15,7 +13,7 @@ def translate(event, context):
         )
         itemTextLanguageCode = comprehendResponse[
             'Languages'][0]['LanguageCode'
-        ]
+            ]
 
         response = {
             "statusCode": 200,

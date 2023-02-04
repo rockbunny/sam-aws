@@ -12,11 +12,11 @@ def translate(event, context):
         comprehendResponse = client.detect_dominant_language(
             Text=itemText
         )
-        itemTextLanguageCode = comprehendResponse['Languages'][0]['LanguageCode']
+        itemTextLangCode = comprehendResponse['Languages'][0]['LanguageCode']
 
         response = {
             "statusCode": 200,
-            "body": itemTextLanguageCode
+            "body": itemTextLangCode
         }
     else:
         response = {

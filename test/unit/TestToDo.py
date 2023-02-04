@@ -78,8 +78,7 @@ class TestDatabaseFunctions(unittest.TestCase):
         # Testing file functions
         from src.todoList import put_item
         # Table mock
-        self.assertRaises(Exception, put_item("", self.dynamodb))
-        self.assertRaises(Exception, put_item("", self.dynamodb))
+        self.assertRaises(Exception, put_item(self.text, self.dynamodb))
         print ('End: test_put_todo_error')
 
     def test_get_todo(self):
@@ -103,6 +102,17 @@ class TestDatabaseFunctions(unittest.TestCase):
             self.text,
             responseGet['text'])
         print ('End: test_get_todo')
+
+    def test_get_todo_error(self):
+        print ('---------------------')
+        print ('Start: test_delete_todo_error')
+        from src.todoList import get_items
+        from src.todoList import put_item
+        # Testing file functions
+        responsePut = put_item(self.text, self.dynamodb)
+        print ('Response put_item:' + str(responsePut))
+        self.assertRaises(TypeError, get_items(self.dynamodb))
+        print ('End: test_get_todo_error')
     
     def test_list_todo(self):
         print ('---------------------')
@@ -118,7 +128,6 @@ class TestDatabaseFunctions(unittest.TestCase):
         self.assertTrue(len(result) == 1)
         self.assertTrue(result[0]['text'] == self.text)
         print ('End: test_list_todo')
-
 
     def test_update_todo(self):
         print ('---------------------')
@@ -143,7 +152,7 @@ class TestDatabaseFunctions(unittest.TestCase):
 
     def test_update_todo_error(self):
         print ('---------------------')
-        print ('Start: atest_update_todo_error')
+        print ('Start: test_update_todo_error')
         from src.todoList import put_item
         from src.todoList import update_item
         updated_text = "Aprender más cosas que DevOps y Cloud en la UNIR"
@@ -172,7 +181,7 @@ class TestDatabaseFunctions(unittest.TestCase):
                 self.uuid,
                 "",
                 self.dynamodb))
-        print ('End: atest_update_todo_error')
+        print ('End: test_update_todo_error')
 
     def test_delete_todo(self):
         print ('---------------------')

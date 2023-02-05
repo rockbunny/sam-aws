@@ -8,9 +8,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Añadida nueva función llamada translate que genera una 
 traducción del texto a partir de una entrada
+- Añadido el step para limpiar el stack
 
 
-## [1.0.1] - 2021-01-08
+## [1.0.1] - 2023-02-01
 ### Fix
 - Correción para superar el requerimiento de la cobertura mínima
 

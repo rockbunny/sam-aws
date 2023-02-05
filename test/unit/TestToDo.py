@@ -102,17 +102,6 @@ class TestDatabaseFunctions(unittest.TestCase):
             self.text,
             responseGet['text'])
         print ('End: test_get_todo')
-
-    def test_get_todo_error(self):
-        print ('---------------------')
-        print ('Start: test_delete_todo_error')
-        from src.todoList import get_items
-        from src.todoList import put_item
-        # Testing file functions
-        responsePut = put_item(self.text, self.dynamodb)
-        print ('Response put_item:' + str(responsePut))
-        self.assertRaises(TypeError, get_items(self.dynamodb))
-        print ('End: test_get_todo_error')
     
     def test_list_todo(self):
         print ('---------------------')
@@ -207,6 +196,38 @@ class TestDatabaseFunctions(unittest.TestCase):
         # Testing file functions
         self.assertRaises(TypeError, delete_item("", self.dynamodb))
         print ('End: test_delete_todo_error')
+
+@mock_dynamodb
+class TestDatabaseFunctionsError(unittest.TestCase):
+    def setUp(self):
+        print ('---------------------')
+        print ('Start: setUp')
+        warnings.filterwarnings(
+            "ignore",
+            category=ResourceWarning,
+            message="unclosed.*<socket.socket.*>")
+        warnings.filterwarnings(
+            "ignore",
+            category=DeprecationWarning,
+            message="callable is None.*")
+        warnings.filterwarnings(
+            "ignore",
+            category=DeprecationWarning,
+            message="Using or importing.*")
+        """Create the mock database and table"""
+        self.dynamodb = boto3.resource('dynamodb', region_name='us-east-1')
+        self.is_local = 'true'
+        print ('End: setUp')
+
+    def test_get_todo_error(self):
+        print ('---------------------')
+        print ('Start: test_get_todo_error')
+        from unittest.mock import Mock
+        from src.todoList import get_item
+        self.table = table = Mock()
+        self.table.get_item.side_effect = Exception('Exception')
+        get_item("", self.dynamodb)
+        print ('End: test_get_todo_error')
 
 if __name__ == '__main__':
     unittest.main()

@@ -4,14 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="92f18b16-a58c-45ee-8cec-2940fdc78afb" name="Changes" comment="feature: Add translate.py">
+    <list default="true" id="92f18b16-a58c-45ee-8cec-2940fdc78afb" name="Changes" comment="hotfix: change unhealthyThreshold">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pipelines/PIPELINE-FULL-STAGING/Jenkinsfile" beforeDir="false" afterPath="$PROJECT_DIR$/pipelines/PIPELINE-FULL-STAGING/Jenkinsfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/template.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Jenkins.Settings">
+    <option name="lastSelectedView" value="all" />
+    <option name="username" value="dlopez" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -32,8 +36,14 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.Jenkins&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
+      &quot;TEXT&quot;,
+      &quot;PLAIN_TEXT&quot;
+    ]
   }
 }</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -46,6 +56,8 @@
       <updated>1675285539895</updated>
       <workItem from="1675285541417" duration="5408000" />
       <workItem from="1675498323212" duration="456000" />
+      <workItem from="1675584980392" duration="9000" />
+      <workItem from="1675585395352" duration="796000" />
     </task>
     <task id="LOCAL-00001" summary="feature: Add translate.py">
       <created>1675501093574</created>
@@ -75,7 +87,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675501783832</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="feature: Add translate.py">
+      <created>1675503492929</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1675503492929</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="92f18b16-a58c-45ee-8cec-2940fdc78afb" name="Changes" comment="hotfix: Add comma in line 19 and 20">
+    <list default="true" id="92f18b16-a58c-45ee-8cec-2940fdc78afb" name="Changes" comment="hotfix: fix radon">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/translate.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/translate.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -56,7 +57,7 @@
       <workItem from="1675285541417" duration="5408000" />
       <workItem from="1675498323212" duration="456000" />
       <workItem from="1675584980392" duration="9000" />
-      <workItem from="1675585395352" duration="2879000" />
+      <workItem from="1675585395352" duration="4804000" />
     </task>
     <task id="LOCAL-00001" summary="feature: Add translate.py">
       <created>1675501093574</created>
@@ -114,7 +115,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675588394329</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="hotfix: fix radon">
+      <created>1675588589147</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1675588589147</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -125,6 +133,7 @@
     <MESSAGE value="feature: Add new translate endpoint to api" />
     <MESSAGE value="feature: Add translate function to tanslate lambda" />
     <MESSAGE value="hotfix: Add comma in line 19 and 20" />
-    <option name="LAST_COMMIT_MESSAGE" value="hotfix: Add comma in line 19 and 20" />
+    <MESSAGE value="hotfix: fix radon" />
+    <option name="LAST_COMMIT_MESSAGE" value="hotfix: fix radon" />
   </component>
 </project>

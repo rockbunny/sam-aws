@@ -1,5 +1,7 @@
 import boto3
 import todoList
+import decimalencoder
+import json
 
 
 def translate(event, context):
@@ -22,7 +24,7 @@ def translate(event, context):
         )
         response = {
             "statusCode": 200,
-            "body": translate
+            "body": json.dumps(translate, cls=decimalencoder.DecimalEncoder)
         }
     else:
         response = {

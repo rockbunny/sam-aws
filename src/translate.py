@@ -16,8 +16,8 @@ def translate(event, context):
         )
         itemTextLangCode = comprehendResponse['Languages'][0]['LanguageCode']
         translate = translateClient.translate_text(
-            Text= itemText
-            SourceLanguageCode=itemTextLangCode
+            Text= itemText,
+            SourceLanguageCode=itemTextLangCode,
             TargetLanguageCode=targetLangCode
         )
         response = {

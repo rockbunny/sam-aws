@@ -21,6 +21,7 @@ def get_table(dynamodb=None):
     return table
 
 
+
 def get_item(key, dynamodb=None):
     table = get_table(dynamodb)
     try:
@@ -38,11 +39,13 @@ def get_item(key, dynamodb=None):
             return result['Item']
 
 
+
 def get_items(dynamodb=None):
     table = get_table(dynamodb)
     # fetch todo from the database
     result = table.scan()
     return result['Items']
+
 
 
 def put_item(text, dynamodb=None):
@@ -69,6 +72,7 @@ def put_item(text, dynamodb=None):
         print(e.response['Error']['Message'])
     else:
         return response
+
 
 
 def update_item(key, text, checked, dynamodb=None):
@@ -100,6 +104,7 @@ def update_item(key, text, checked, dynamodb=None):
         return result['Attributes']
 
 
+
 def delete_item(key, dynamodb=None):
     table = get_table(dynamodb)
     # delete the todo from the database
@@ -114,6 +119,8 @@ def delete_item(key, dynamodb=None):
         print(e.response['Error']['Message'])
     else:
         return
+
+
 
 
 def create_todo_table(dynamodb):

@@ -4,14 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="92f18b16-a58c-45ee-8cec-2940fdc78afb" name="Changes" comment="feature: Add translate.py">
+    <list default="true" id="92f18b16-a58c-45ee-8cec-2940fdc78afb" name="Changes" comment="hotfix: fix radon">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pipelines/PIPELINE-FULL-STAGING/Jenkinsfile" beforeDir="false" afterPath="$PROJECT_DIR$/pipelines/PIPELINE-FULL-STAGING/Jenkinsfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/translate.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/translate.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Jenkins.Settings">
+    <option name="lastSelectedView" value="all" />
+    <option name="username" value="dlopez" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -21,21 +25,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/dan/dev/projects/Python/sam-aws-test&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/home/dan/dev/projects/Python/comprehend",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
+      "TEXT",
+      "PLAIN_TEXT"
+    ]
   }
-}</component>
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -46,6 +56,8 @@
       <updated>1675285539895</updated>
       <workItem from="1675285541417" duration="5408000" />
       <workItem from="1675498323212" duration="456000" />
+      <workItem from="1675584980392" duration="9000" />
+      <workItem from="1675585395352" duration="4804000" />
     </task>
     <task id="LOCAL-00001" summary="feature: Add translate.py">
       <created>1675501093574</created>
@@ -75,7 +87,42 @@
       <option name="project" value="LOCAL" />
       <updated>1675501783832</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="feature: Add translate.py">
+      <created>1675503492929</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1675503492929</updated>
+    </task>
+    <task id="LOCAL-00006" summary="feature: Add new translate endpoint to api">
+      <created>1675586348053</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1675586348053</updated>
+    </task>
+    <task id="LOCAL-00007" summary="feature: Add translate function to tanslate lambda">
+      <created>1675588143776</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1675588143776</updated>
+    </task>
+    <task id="LOCAL-00008" summary="hotfix: Add comma in line 19 and 20">
+      <created>1675588394329</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1675588394329</updated>
+    </task>
+    <task id="LOCAL-00009" summary="hotfix: fix radon">
+      <created>1675588589147</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1675588589147</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -83,6 +130,10 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="feature: Add translate.py" />
-    <option name="LAST_COMMIT_MESSAGE" value="feature: Add translate.py" />
+    <MESSAGE value="feature: Add new translate endpoint to api" />
+    <MESSAGE value="feature: Add translate function to tanslate lambda" />
+    <MESSAGE value="hotfix: Add comma in line 19 and 20" />
+    <MESSAGE value="hotfix: fix radon" />
+    <option name="LAST_COMMIT_MESSAGE" value="hotfix: fix radon" />
   </component>
 </project>

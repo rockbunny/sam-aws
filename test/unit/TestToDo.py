@@ -72,15 +72,6 @@ class TestDatabaseFunctions(unittest.TestCase):
         #                 'ResponseMetadata']['HTTPStatusCode'])
         print ('End: test_put_todo')
 
-    def test_put_todo_error(self):
-        print ('---------------------')
-        print ('Start: test_put_todo_error')
-        # Testing file functions
-        from src.todoList import put_item
-        # Table mock
-        self.assertRaises(Exception, put_item(self.text, self.dynamodb))
-        print ('End: test_put_todo_error')
-
     def test_get_todo(self):
         print ('---------------------')
         print ('Start: test_get_todo')
@@ -102,17 +93,6 @@ class TestDatabaseFunctions(unittest.TestCase):
             self.text,
             responseGet['text'])
         print ('End: test_get_todo')
-
-    def test_get_todo_error(self):
-        print ('---------------------')
-        print ('Start: test_delete_todo_error')
-        from src.todoList import get_items
-        from src.todoList import put_item
-        # Testing file functions
-        responsePut = put_item(self.text, self.dynamodb)
-        print ('Response put_item:' + str(responsePut))
-        self.assertRaises(TypeError, get_items(self.dynamodb))
-        print ('End: test_get_todo_error')
     
     def test_list_todo(self):
         print ('---------------------')
@@ -149,6 +129,71 @@ class TestDatabaseFunctions(unittest.TestCase):
         self.assertEqual(result['text'], updated_text)
         print ('End: test_update_todo')
 
+    def test_delete_todo(self):
+        print ('---------------------')
+        print ('Start: test_delete_todo')
+        from src.todoList import delete_item
+        from src.todoList import put_item
+        from src.todoList import get_items
+        # Testing file functions
+        # Table mock
+        responsePut = put_item(self.text, self.dynamodb)
+        print ('Response PutItem' + str(responsePut))
+        idItem = json.loads(responsePut['body'])['id']
+        print ('Id item:' + idItem)
+        delete_item(idItem, self.dynamodb)
+        print ('Item deleted succesfully')
+        self.assertTrue(len(get_items(self.dynamodb)) == 0)
+        print ('End: test_delete_todo')
+
+@mock_dynamodb
+class TestDatabaseFunctionsError(unittest.TestCase):
+    def setUp(self):
+        print ('---------------------')
+        print ('Start: setUp')
+        warnings.filterwarnings(
+            "ignore",
+            category=ResourceWarning,
+            message="unclosed.*<socket.socket.*>")
+        warnings.filterwarnings(
+            "ignore",
+            category=DeprecationWarning,
+            message="callable is None.*")
+        warnings.filterwarnings(
+            "ignore",
+            category=DeprecationWarning,
+            message="Using or importing.*")
+        """Create the mock database and table"""
+        self.dynamodb = boto3.resource('dynamodb', region_name='us-east-1')
+        self.is_local = 'true'
+        from unittest.mock import Mock
+        self.table = table = Mock()
+        self.table.get_item.side_effect = Exception('Im an exception')
+        print ('End: setUp')
+
+    def test_get_todo_error(self):
+        print ('---------------------')
+        print ('Start: test_get_todo_error')
+        from src.todoList import get_item
+        get_item("", self.dynamodb)
+        print ('End: test_get_todo_error')
+
+    def test_put_todo_error(self):
+        print ('---------------------')
+        print ('Start: test_put_todo_error')
+        # Testing file functions
+        from src.todoList import put_item
+        # Table mock
+        self.assertRaises(Exception, put_item(self.text, self.dynamodb))
+        print ('End: test_put_todo_error')
+
+    def test_delete_todo_error(self):
+        print ('---------------------')
+        print ('Start: test_delete_todo_error')
+        from src.todoList import delete_item
+        # Testing file functions
+        self.assertRaises(TypeError, delete_item("", self.dynamodb))
+        print ('End: test_delete_todo_error')
 
     def test_update_todo_error(self):
         print ('---------------------')
@@ -182,31 +227,6 @@ class TestDatabaseFunctions(unittest.TestCase):
                 "",
                 self.dynamodb))
         print ('End: test_update_todo_error')
-
-    def test_delete_todo(self):
-        print ('---------------------')
-        print ('Start: test_delete_todo')
-        from src.todoList import delete_item
-        from src.todoList import put_item
-        from src.todoList import get_items
-        # Testing file functions
-        # Table mock
-        responsePut = put_item(self.text, self.dynamodb)
-        print ('Response PutItem' + str(responsePut))
-        idItem = json.loads(responsePut['body'])['id']
-        print ('Id item:' + idItem)
-        delete_item(idItem, self.dynamodb)
-        print ('Item deleted succesfully')
-        self.assertTrue(len(get_items(self.dynamodb)) == 0)
-        print ('End: test_delete_todo')
-
-    def test_delete_todo_error(self):
-        print ('---------------------')
-        print ('Start: test_delete_todo_error')
-        from src.todoList import delete_item
-        # Testing file functions
-        self.assertRaises(TypeError, delete_item("", self.dynamodb))
-        print ('End: test_delete_todo_error')
 
 if __name__ == '__main__':
     unittest.main()

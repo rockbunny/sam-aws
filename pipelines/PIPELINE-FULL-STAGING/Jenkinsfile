@@ -19,7 +19,7 @@ pipeline {
                 always {
                     script {
                         def failed = publishCoverage (failUnhealthy: true, 
-                            globalThresholds: [[thresholdTarget: 'Line', unhealthyThreshold: 70.0]],
+                            globalThresholds: [[thresholdTarget: 'Line', unhealthyThreshold: 80.0]],
                             adapters: [coberturaAdapter(
                                 mergeToOneReport: true, 
                                 path: '**/coverage.xml')])
@@ -53,8 +53,9 @@ pipeline {
         }
     }
     post { 
-        always { 
-            echo 'Clean env: delete dir'
+        always {
+            echo 'Clean app and delete stack'
+            sh "bash pipelines/common-steps/delete_stack.sh"
             cleanWs()
         }
     }
